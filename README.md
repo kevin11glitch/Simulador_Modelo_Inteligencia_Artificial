@@ -1,6 +1,6 @@
 # Simulador de Modelo de Treinamento de Inteligencia Artificial
 Projeto I dedicado à matéria de Laboratório de Programação 2026.1
-## Aplicação das Especificações no Tema 
+### Aplicação das Especificações no Tema 
 
 Ao rodar o código executável, o prompt exibe integrantes, tema, boas-vindas e menu contendo: 
 - Opção 1: Processar nova época (ciclo): Solicita a % de acurácia atual, a taxa de erro e o tempo de processamento em segundos;
