@@ -15,6 +15,7 @@ extern int tempo_total_segundos;
 
 // --- Parâmetros de Aprendizado ---
 extern double taxa_aprendizado;
-extern double acuracia_anterior;    
+extern double acuracia_anterior;  
+extern double acuracia_atual;
 
 #endif
