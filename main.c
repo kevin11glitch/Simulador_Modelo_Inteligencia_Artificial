@@ -34,20 +34,22 @@ int main(){
         {
         case 1:
             system("cls");
-            printf("* Opcao %d selecionada -> Insira  a %% de acuracia atual, a taxa de erro e o tempo de processamento em segundos\n", opcao);
+            printf("* Opcao %d selecionada -> Insira  a %% de acuracia atual\n", opcao);
             double aux_erro_atual; //variável auxiliar de erro atual
             scanf("%lf", &acuracia_atual);
             while (acuracia_atual > 100 || acuracia_atual < 0){
-                printf("Insira corretamente a %% de acuracia atual (entre 0%% - 100%%)");
+                printf("Insira corretamente a %% de acuracia atual (entre 0%% - 100%%): ");
                 scanf("%lf", &acuracia_atual);
             };
 
+            printf("Insira a taxa de erro: ");
             scanf("%lf", &aux_erro_atual);
             while (aux_erro_atual < 0){
                 printf("Insira a taxa de erro corretamente (apenas valores positivos)");
                 scanf("%lf", &aux_erro_atual);
             }
 
+            printf("Insira o tempo de processamento em segundos: ");
             scanf("%i", &tempo_total_segundos);
             break;
         
