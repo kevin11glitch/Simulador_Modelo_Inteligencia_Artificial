@@ -15,14 +15,14 @@ void ajustar_acuracia_ia() {
     if (tipo_ajuste == 1) { // Bônus
         system("cls");
         acuracia_atual = acuracia_atual + fator;
-        printf("O bonus foi aplicado !\n");
+        printf("O bonus foi aplicado!\n");
     } else if (tipo_ajuste == 2) { // Penalidade
         system("cls");
         acuracia_atual = acuracia_atual - fator;
-        printf("A penalidade foi aplicada !\n");
+        printf("A penalidade foi aplicada!\n");
     } else if(tipo_ajuste != 1 || tipo_ajuste != 2){
         system("cls");
-        printf("Digite um valor valido\n");
+        printf("Opcao invalida digite um outro valor\n");
     }
 
     // Garante que a acurácia fique entre 0 e 100
