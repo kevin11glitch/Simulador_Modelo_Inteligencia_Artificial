@@ -4,13 +4,25 @@
 
 // Lógica de Ajuste da Acurácia f(x) = Acurácia + (taxa x 0,1)
 // tipo_ajuste: 1 para Bônus, 2 para Penalidade
-void ajustar_acuracia_ia(int tipo_ajuste) {
+void ajustar_acuracia_ia() {
     double fator = taxa_aprendizado * 0.1;
+    int tipo_ajuste;
+
+    printf("Digite a opcao que deseja:\n1- Aplicar um bonus na taxa de aprendizado\n2- Aplicar uma penalidade na taxa de aprendizado");
+    scanf("%d", &tipo_ajuste);
+
     
     if (tipo_ajuste == 1) { // Bônus
+        system("cls");
         acuracia_atual = acuracia_atual + fator;
+        printf("O bonus foi aplicado !\n");
     } else if (tipo_ajuste == 2) { // Penalidade
+        system("cls");
         acuracia_atual = acuracia_atual - fator;
+        printf("A penalidade foi aplicada !\n");
+    } else if(tipo_ajuste != 1 || tipo_ajuste != 2){
+        system("cls");
+        printf("Digite um valor valido\n");
     }
 
     // Garante que a acurácia fique entre 0 e 100
