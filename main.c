@@ -5,12 +5,15 @@
 
 //Variáveis
 double maior_acuracia = 0.0;
-double menor_erro = 100.0; 
-double maior_erro = 0.0;
 int tempo_total_segundos = 0;
 double taxa_aprendizado = 0.0;
 double acuracia_anterior = 0.0;
 double acuracia_atual = 0.0;
+int total_ciclos = 0;
+double acuracia_total = 0.0;
+double menor_erro = 100.0; 
+double maior_erro = 0.0;
+
 
 int main(){
     //Introdução
@@ -54,18 +57,29 @@ int main(){
                 while (getchar() != '\n');
             }
 
+            MAIOR_ERRO(aux_erro_atual); 
+
             printf("-> Insira o tempo de processamento em segundos: ");
-            scanf("%i", &tempo_total_segundos);
+            int tempo_epoca;
+            while (scanf("%d", &tempo_epoca) != 1 || tempo_epoca < 0) {
+                printf("-> Insira um tempo valido: ");
+                while (getchar() != '\n');
+            }
+            tempo_total_segundos += tempo_epoca; // Acúmulo de tempo 
 
-            double total_acuracia = ACURACIA_TOTAL(acuracia_atual);
-            printf("Acuracia total: %.2lf\n\n", total_acuracia);
+            ACURACIA_TOTAL(acuracia_atual); 
 
+            printf("Dados processados com sucesso!\n\n");
             break;
-        
-            
+
         case 2:
             system("cls");
-            printf("* Opcao %d selecionada: ->...\n", opcao);
+            printf("* Opcao %d selecionada - Metricas do Modelo:\n", opcao);
+            printf("-> Quantidade total de Ciclos: %d\n", total_ciclos);
+            printf("-> Acuracia acumulada: %.2lf\n", acuracia_total); 
+            printf("-> Maior erro registrado: %.2lf\n", maior_erro); 
+            
+            system("pause");
             break;
 
         case 3:

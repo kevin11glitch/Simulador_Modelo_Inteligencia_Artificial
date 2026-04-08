@@ -10,7 +10,8 @@ extern double maior_acuracia;
 int CICLO();
 double ACURACIA_TOTAL();      
 extern double menor_erro;    
-extern double maior_erro;   
+extern double maior_erro;
+double MAIOR_ERRO();   
    
 
 // --- Tempo ---

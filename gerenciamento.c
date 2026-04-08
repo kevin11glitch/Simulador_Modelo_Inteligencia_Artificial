@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "globals.h"
 
-int total_ciclos = 0;
-double acuracia_total = 0.0;
 
 
 double ACURACIA_TOTAL(double acuracia_atual){
@@ -11,6 +9,15 @@ double ACURACIA_TOTAL(double acuracia_atual){
     
     return acuracia_total;
 };
+
+double MAIOR_ERRO(double aux_erro_atual){
+    if (aux_erro_atual > maior_erro){
+        maior_erro = aux_erro_atual;
+    };
+
+    return maior_erro;
+
+}
 
 
 int CICLO(){
