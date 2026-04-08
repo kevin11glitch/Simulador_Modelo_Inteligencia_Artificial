@@ -4,8 +4,6 @@
 #include "ia_logic.c"
 
 //Variáveis
-int total_ciclos = 0;
-double soma_acuracia = 0.0;
 double maior_acuracia = 0.0;
 double menor_erro = 100.0; 
 double maior_erro = 0.0;
@@ -35,34 +33,42 @@ int main(){
         {
         case 1:
             system("cls");
-            printf("* Opcao %d selecionada -> Insira  a %% de acuracia atual\n", opcao);
+            int ciclo = CICLO();
+            printf("%do Ciclo\n", ciclo);
+            printf("* Opcao %d selecionada:\n", opcao);
             double aux_erro_atual; //variável auxiliar de erro atual
+
+            printf("-> Insira  a %% de acuracia atual: ");
             scanf("%lf", &acuracia_atual);
             while (acuracia_atual > 100 || acuracia_atual < 0){
-                printf("Insira corretamente a %% de acuracia atual (entre 0%% - 100%%): ");
+                printf("-> Insira corretamente a %% de acuracia atual (entre 0%% - 100%%): ");
                 scanf("%lf", &acuracia_atual);
             };
 
-            printf("Insira a taxa de erro: ");
+            printf("-> Insira a taxa de erro: ");
             scanf("%lf", &aux_erro_atual);
             while (aux_erro_atual < 0){
-                printf("Insira a taxa de erro corretamente (apenas valores positivos)");
+                printf("-> Insira a taxa de erro corretamente (apenas valores positivos): ");
                 scanf("%lf", &aux_erro_atual);
             }
 
-            printf("Insira o tempo de processamento em segundos: ");
+            printf("-> Insira o tempo de processamento em segundos: ");
             scanf("%i", &tempo_total_segundos);
+
+            double total_acuracia = ACURACIA_TOTAL(acuracia_atual);
+            printf("Acuracia total: %.2lf\n\n", total_acuracia);
+
             break;
         
-
+            
         case 2:
             system("cls");
-            printf("* Opcao %d selecionada ->...\n", opcao);
+            printf("* Opcao %d selecionada: ->...\n", opcao);
             break;
 
         case 3:
             system("cls");
-            printf("* Opcao %d selecionada ->...\n", opcao);
+            printf("* Opcao %d selecionada: ->...\n", opcao);
             
             ajustar_acuracia_ia();
 
@@ -70,7 +76,7 @@ int main(){
 
         case 4:
             system("cls");
-            printf("* Opcao %d selecionada -> Encerrando programa\n", opcao);
+            printf("* Opcao %d selecionada: -> Encerrando programa\n", opcao);
             break;
         
         default:

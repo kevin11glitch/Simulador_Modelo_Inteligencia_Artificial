@@ -3,10 +3,12 @@
 
 // --- Estado do Sistema ---
 extern int total_ciclos;  
-extern double soma_acuracia;     
+extern double acuracia_total;     
 
 // --- Métricas de Desempenho ---
-extern double maior_acuracia;       
+extern double maior_acuracia; 
+int CICLO();
+double ACURACIA_TOTAL();      
 extern double menor_erro;    
 extern double maior_erro;   
    
