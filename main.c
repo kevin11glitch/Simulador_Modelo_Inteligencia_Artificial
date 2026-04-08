@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "globals.h"
+#include "ia_logic.c"
 
 //Variáveis
 int total_ciclos = 0;
@@ -62,6 +63,9 @@ int main(){
         case 3:
             system("cls");
             printf("* Opcao %d selecionada ->...\n", opcao);
+            
+            ajustar_acuracia_ia();
+
             break;
 
         case 4:
