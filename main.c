@@ -12,7 +12,6 @@ double taxa_aprendizado = 0.0;
 double acuracia_anterior = 0.0;
 double acuracia_atual = 0.0;
 
-
 int main(){
     //Introdução
     printf("Ola, sejam bem vindos ao Simulador de Modelo de Inteligencia Artificial.\n");
@@ -34,22 +33,25 @@ int main(){
         case 1:
             system("cls");
             int ciclo = CICLO();
+            
+
             printf("%do Ciclo\n", ciclo);
+
             printf("* Opcao %d selecionada:\n", opcao);
             double aux_erro_atual; //variável auxiliar de erro atual
 
             printf("-> Insira  a %% de acuracia atual: ");
-            scanf("%lf", &acuracia_atual);
-            while (acuracia_atual > 100 || acuracia_atual < 0){
+            while (scanf("%lf", &acuracia_atual) != 1 || acuracia_atual > 100 || acuracia_atual < 0){
                 printf("-> Insira corretamente a %% de acuracia atual (entre 0%% - 100%%): ");
-                scanf("%lf", &acuracia_atual);
+
+                while (getchar() != '\n');
             };
 
             printf("-> Insira a taxa de erro: ");
-            scanf("%lf", &aux_erro_atual);
-            while (aux_erro_atual < 0){
+            while (scanf("%lf", &aux_erro_atual) != 1 || aux_erro_atual < 0) {
                 printf("-> Insira a taxa de erro corretamente (apenas valores positivos): ");
-                scanf("%lf", &aux_erro_atual);
+                
+                while (getchar() != '\n');
             }
 
             printf("-> Insira o tempo de processamento em segundos: ");
