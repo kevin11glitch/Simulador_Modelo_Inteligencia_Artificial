@@ -11,7 +11,7 @@ int CICLO();
 double ACURACIA_TOTAL();      
 extern double menor_erro;    
 extern double maior_erro;
-double MAIOR_ERRO();   
+double ERROS();   
    
 
 // --- Tempo ---

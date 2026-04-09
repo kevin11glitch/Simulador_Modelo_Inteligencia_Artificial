@@ -57,7 +57,7 @@ int main(){
                 while (getchar() != '\n');
             }
 
-            MAIOR_ERRO(aux_erro_atual); 
+            ERROS(aux_erro_atual); 
 
             printf("-> Insira o tempo de processamento em segundos: ");
             int tempo_epoca;
@@ -65,7 +65,7 @@ int main(){
                 printf("-> Insira um tempo valido: ");
                 while (getchar() != '\n');
             }
-            tempo_total_segundos += tempo_epoca; // Acúmulo de tempo 
+            tempo_total_segundos += tempo_epoca; 
 
             ACURACIA_TOTAL(acuracia_atual); 
 
@@ -76,10 +76,10 @@ int main(){
             system("cls");
             printf("* Opcao %d selecionada - Metricas do Modelo:\n", opcao);
             printf("-> Quantidade total de Ciclos: %d\n", total_ciclos);
-            printf("-> Acuracia acumulada: %.2lf\n", acuracia_total); 
+            printf("-> Acuracia Total: %.2lf\n", acuracia_total); 
             printf("-> Maior erro registrado: %.2lf\n", maior_erro); 
-            
-            system("pause");
+            printf("-> Menor erro registrado: %.2lf\n", menor_erro); 
+
             break;
 
         case 3:
