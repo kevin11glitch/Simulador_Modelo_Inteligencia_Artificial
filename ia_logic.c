@@ -56,3 +56,7 @@ int exibir_tempo_processamento(int tempo_total_segundos) {
     }
     return horas, minutos, segundos_restantes;
 }
+
+double MEDIA_TEMPO_GASTO(int tempo_total_segundos, int total_ciclos){
+    return tempo_total_segundos/total_ciclos;
+}

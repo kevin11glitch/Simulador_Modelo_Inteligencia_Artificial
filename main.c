@@ -39,11 +39,8 @@ int main(){
         case 1:
             system("cls");
             int ciclo = CICLO();
-            
-
             printf("%do Ciclo\n", ciclo);
-
-            printf("* Opcao %d selecionada:\n", opcao);
+            printf("* Opcao %d selecionada: Processar nova epoca\n", opcao);
             double aux_erro_atual; //variável auxiliar de erro atual
 
             printf("-> Insira  a %% de acuracia atual: ");
@@ -78,12 +75,13 @@ int main(){
         case 2:
             exibir_tempo_processamento(tempo_total_segundos);
             system("cls");
-            printf("* Opcao %d selecionada - Metricas do Modelo:\n", opcao);
+            printf("* Opcao %d selecionada: Metricas do Modelo\n", opcao);
             printf("-> Quantidade total de Ciclos: %d\n", total_ciclos);
             printf("-> Acuracia Total: %.2lf\n", acuracia_total); 
             printf("-> Maior erro registrado: %.2lf\n", maior_erro); 
             printf("-> Menor erro registrado: %.2lf\n", menor_erro); 
             printf("-> Tempo de treinamento: %d segundos\n", tempo_total_segundos);
+            printf("-> Media de tempo gasto por ciclo: %.2lf segundos\n", MEDIA_TEMPO_GASTO(tempo_total_segundos, total_ciclos));
             printf("-> Tempo de processamento em hh:mm:ss: %d:%d:%d\n\n", horas, minutos, segundos_restantes);
 
             break;
@@ -91,14 +89,12 @@ int main(){
         case 3:
             system("cls");
             printf("* Opcao %d selecionada: ->...\n", opcao);
-            
             ajustar_acuracia_ia();
-
             break;
 
         case 4:
             system("cls");
-            printf("* Opcao %d selecionada: -> Encerrando programa\n", opcao);
+            printf("* Opcao %d selecionada: Encerrando programa\n", opcao);
             break;
         
         default:

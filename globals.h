@@ -37,5 +37,6 @@ extern int num_entradas;
 void treinar_logica_ia();
 double sigmoid(double x);
 int exibir_tempo_processamento();
+double MEDIA_TEMPO_GASTO();
 
 #endif

@@ -22,6 +22,7 @@ double ERROS(double aux_erro_atual){
 }
 
 
+
 int CICLO(){
     return ++total_ciclos;
 };
