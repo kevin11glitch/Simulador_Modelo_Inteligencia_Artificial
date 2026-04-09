@@ -78,6 +78,7 @@ int main(){
             printf("* Opcao %d selecionada: Metricas do Modelo\n", opcao);
             printf("-> Quantidade total de Ciclos: %d\n", total_ciclos);
             printf("-> Acuracia Total: %.2lf\n", acuracia_total); 
+            printf("-> Maior acuracia: %.2lf\n", maior_acuracia);
             printf("-> Maior erro registrado: %.2lf\n", maior_erro); 
             printf("-> Menor erro registrado: %.2lf\n", menor_erro); 
             printf("-> Tempo de treinamento: %d segundos\n", tempo_total_segundos);

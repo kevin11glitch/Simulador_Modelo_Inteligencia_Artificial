@@ -6,8 +6,11 @@
 
 double ACURACIA_TOTAL(double acuracia_atual){
     acuracia_total += acuracia_atual;
+    if (maior_acuracia < acuracia_atual){
+        maior_acuracia = acuracia_atual;
+    }
     
-    return acuracia_total;
+    return acuracia_total, maior_acuracia;
 };
 
 double ERROS(double aux_erro_atual){
