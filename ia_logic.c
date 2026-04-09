@@ -43,18 +43,16 @@ void verificar_status_modelo(double erro_atual) {
 }
 
 // Converte o tempo_total_segundos acumulado
-void exibir_tempo_processamento() {
-    int segundos_restantes = tempo_total_segundos;
-    int horas = 0, minutos = 0;
+int exibir_tempo_processamento(int tempo_total_segundos) {
+    horas = 0;
+    minutos = 0;
+    segundos_restantes = tempo_total_segundos;
 
-    // Usando laços for conforme solicitado, mas parando em Horas
-    for (; segundos_restantes >= 3600; segundos_restantes -= 3600) {
-        horas++;
-    }
     for (; segundos_restantes >= 60; segundos_restantes -= 60) {
         minutos++;
     }
-
-    printf("Tempo total de processamento: %d Horas, %d Minutos e %d Segundos.\n", 
-            horas, minutos, segundos_restantes);
+    for (; minutos >= 60; minutos -= 60){
+        horas++;
+    }
+    return horas, minutos, segundos_restantes;
 }

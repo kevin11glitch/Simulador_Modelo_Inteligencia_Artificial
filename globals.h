@@ -15,7 +15,10 @@ double ERROS();
    
 
 // --- Tempo ---
-extern int tempo_total_segundos;    
+extern int tempo_total_segundos;  
+extern int horas;
+extern int minutos;
+extern int segundos_restantes;  
 
 // --- Parâmetros de Aprendizado ---
 extern double taxa_aprendizado;
@@ -33,5 +36,6 @@ extern int num_entradas;
 // Protótipo da função de treino
 void treinar_logica_ia();
 double sigmoid(double x);
+int exibir_tempo_processamento();
 
 #endif
