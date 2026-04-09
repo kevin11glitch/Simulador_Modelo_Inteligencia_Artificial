@@ -43,38 +43,40 @@ int main(){
             printf("* Opcao %d selecionada: Processar nova epoca\n", opcao);
             double aux_erro_atual; //variável auxiliar de erro atual
 
+            acuracia_anterior = acuracia_atual;
             printf("-> Insira  a %% de acuracia atual: ");
             while (scanf("%lf", &acuracia_atual) != 1 || acuracia_atual > 100 || acuracia_atual < 0){
-                printf("-> Insira corretamente a %% de acuracia atual (entre 0%% - 100%%): ");
+                printf("-> Valor invalido! Insira corretamente a %% de acuracia atual (entre 0%% - 100%%): ");
 
                 while (getchar() != '\n');
             };
 
             printf("-> Insira a taxa de erro: ");
             while (scanf("%lf", &aux_erro_atual) != 1 || aux_erro_atual < 0) {
-                printf("-> Insira a taxa de erro corretamente (apenas valores positivos): ");
+                printf("-> Valor invalido! Insira a taxa de erro corretamente (apenas valores positivos): ");
                 
                 while (getchar() != '\n');
             }
 
-            ERROS(aux_erro_atual); 
 
             printf("-> Insira o tempo de processamento em segundos: ");
             int aux_tempo_epoca;
             while (scanf("%d", &aux_tempo_epoca) != 1 || aux_tempo_epoca < 0) {
-                printf("-> Insira um tempo valido: ");
+                printf("-> Valor invalido! Insira um tempo valido: ");
                 while (getchar() != '\n');
             }
+
             tempo_total_segundos += aux_tempo_epoca; 
 
-            ACURACIA_TOTAL(acuracia_atual); 
-
             printf("Dados processados com sucesso!\n\n");
+            VERIFICAR_STATUS_MODELO(aux_erro_atual);    
+            ERROS(aux_erro_atual); 
+            ACURACIA_TOTAL(acuracia_atual);
             break;
 
         case 2:
-            exibir_tempo_processamento(tempo_total_segundos);
             system("cls");
+            EXIBIR_TEMPO_PROCESSAMENTO(tempo_total_segundos);
             printf("* Opcao %d selecionada: Metricas do Modelo\n", opcao);
             printf("-> Quantidade total de Ciclos: %d\n", total_ciclos);
             printf("-> Acuracia Total: %.2lf\n", acuracia_total); 
@@ -89,8 +91,14 @@ int main(){
 
         case 3:
             system("cls");
-            printf("* Opcao %d selecionada: ->...\n", opcao);
-            ajustar_acuracia_ia();
+            printf("* Opcao %d selecionada: Ajustar taxa de aprendizado.\n", opcao);
+            printf("-> Insira a Taxa de Aprendizado atual (ex: 0.5): ");
+            while (scanf("%lf", &taxa_aprendizado) != 1 || taxa_aprendizado < 0) {
+                printf("-> Valor invalido! Insira uma taxa positiva: ");
+                while (getchar() != '\n');
+            }
+            AJUSTAR_ACURACIA_IA();
+            printf("Nova acuracia atualizada: %.2lf%%\n", acuracia_atual);
             break;
 
         case 4:

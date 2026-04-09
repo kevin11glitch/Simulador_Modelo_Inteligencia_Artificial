@@ -8,10 +8,10 @@ extern double acuracia_total;
 // --- Métricas de Desempenho ---
 extern double maior_acuracia; 
 int CICLO();
-double ACURACIA_TOTAL();      
+void ACURACIA_TOTAL(double acuracia_atual);      
 extern double menor_erro;    
 extern double maior_erro;
-double ERROS();   
+void ERROS(double acuracia_atual);   
    
 
 // --- Tempo ---
@@ -34,9 +34,9 @@ extern double alvo;
 extern int num_entradas;
 
 // Protótipo da função de treino
-void treinar_logica_ia();
-double sigmoid(double x);
-int exibir_tempo_processamento();
-double MEDIA_TEMPO_GASTO();
+void AJUSTAR_ACURACIA_IA();
+void VERIFICAR_STATUS_MODELO(double erro_atual);
+void EXIBIR_TEMPO_PROCESSAMENTO(int tempo_total_segundos);
+double MEDIA_TEMPO_GASTO(int tempo_total_segundos, int total_ciclos);
 
 #endif
