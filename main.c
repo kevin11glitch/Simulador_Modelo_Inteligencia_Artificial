@@ -92,13 +92,13 @@ int main(){
         case 3:
             system("cls");
             printf("* Opcao %d selecionada: Ajustar taxa de aprendizado.\n", opcao);
-            printf("-> Insira a Taxa de Aprendizado atual (ex: 0.5): ");
+            printf("-> Insira a Taxa de Aprendizado atual: ");
             while (scanf("%lf", &taxa_aprendizado) != 1 || taxa_aprendizado < 0) {
                 printf("-> Valor invalido! Insira uma taxa positiva: ");
                 while (getchar() != '\n');
             }
             AJUSTAR_ACURACIA_IA();
-            printf("Nova acuracia atualizada: %.2lf%%\n", acuracia_atual);
+            printf("Nova acuracia atualizada: %.2lf%%\n\n", acuracia_atual);
             break;
 
         case 4:
