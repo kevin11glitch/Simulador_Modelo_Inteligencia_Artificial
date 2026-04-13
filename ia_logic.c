@@ -50,6 +50,11 @@ void VERIFICAR_STATUS_MODELO(double erro_atual) {
     }
 }
 
+double MEDIA_TEMPO_GASTO(int tempo_total_segundos, int total_ciclos){
+    if (total_ciclos == 0) return 0; 
+    return (double)tempo_total_segundos / total_ciclos;
+}
+
 //Conversão
 void EXIBIR_TEMPO_PROCESSAMENTO(int tempo_total_segundos) {
     horas = 0;
@@ -64,7 +69,4 @@ void EXIBIR_TEMPO_PROCESSAMENTO(int tempo_total_segundos) {
     }
 }
 
-double MEDIA_TEMPO_GASTO(int tempo_total_segundos, int total_ciclos){
-    if (total_ciclos == 0) return 0; 
-    return (double)tempo_total_segundos / total_ciclos;
-}
+
